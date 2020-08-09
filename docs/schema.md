@@ -64,7 +64,7 @@ public class QueryType
 {
     protected override void Configure(IObjectTypeDescriptor<Query> descriptor)
     {
-        descriptor.Field("foo").Resolver("bar").
+        descriptor.Field("foo").Resolver("bar");
     }
 }
 
@@ -123,7 +123,7 @@ This is very useful with schema stitching, since this allows us to consume remot
 
 ## Binding Types
 
-Types in a schema can be bound to a specific .NET type. When the schema builder infers schema types from .NET types it will basically lookup to which schema type a .NET type can be bound. For instance a `string` will be bound to a `StringType`.
+Types in a schema can be bound to a specific .NET type. When the schema builder infers schema types from .NET types it will basically lookup to which schema type a .NET type can be bound. For instance a `Guid` will be bound to a `StringType`.
 
 We can also bind additonal types to a single schema type. For instance we can bind the `System.Guid` to our `StringType`.
 
